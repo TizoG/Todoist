@@ -15,7 +15,7 @@ def index() -> rx.Component:
     # Welcome Page (Index)
     return rx.container(
         navbar(),
-        background_color="#F7F7F7",
+
     )
 
 
