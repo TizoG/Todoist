@@ -1,7 +1,8 @@
 
 import reflex as rx
-
+from reflex import theme
 from rxconfig import config
+from .components.navbar import navbar
 
 
 class State(rx.State):
@@ -13,9 +14,15 @@ class State(rx.State):
 def index() -> rx.Component:
     # Welcome Page (Index)
     return rx.container(
-
+        navbar(),
+        background_color="#F7F7F7",
     )
 
 
-app = rx.App()
+app = rx.App(
+    theme=theme(
+        color_mode="light",
+    ),
+    style={"background_color": "#F7F7F7"}
+)
 app.add_page(index)
