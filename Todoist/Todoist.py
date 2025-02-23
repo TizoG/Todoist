@@ -3,6 +3,7 @@ import reflex as rx
 from reflex import theme
 from rxconfig import config
 from .components.navbar import navbar
+from .components.hero import hero
 
 
 class State(rx.State):
@@ -15,7 +16,7 @@ def index() -> rx.Component:
     # Welcome Page (Index)
     return rx.container(
         navbar(),
-
+        hero(),
     )
 
 
