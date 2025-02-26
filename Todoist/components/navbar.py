@@ -1,26 +1,32 @@
 import reflex as rx
+from ..styles.styles import Spacing, Colors
 
 
 def navbar() -> rx.Component:
     return rx.box(
         rx.hstack(
-            rx.heading(
-                "Gestor de Tareas",
-                line_height="40px"
+            rx.link(
+                rx.heading(
+                    "Gestor de Tareas",
+                    line_height="40px"
+                ),
+                href="/",
+                text_decoration="none",
+                color=Colors.NEGRO.value
             ),
             rx.link(
                 "Acerca de",
-                href="#",
+                href="/about",
                 text_align="center",
                 line_height="30px",
                 text_decoration="none",
-                color="white",
-                background_color="black",
+                color=Colors.BLANCO.value,
+                background_color=Colors.NEGRO.value,
                 padding_y="5px",
                 padding_x="10px",
                 border_radius="5px",
                 _hover={
-                    "background_color": "gray"
+                    "background_color": Colors.GRIS.value
                 }
             ),
             justify="between",

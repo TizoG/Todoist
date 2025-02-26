@@ -4,6 +4,8 @@ from reflex import theme
 from rxconfig import config
 from .components.navbar import navbar
 from .components.hero import hero
+from .components.lista_tareas import lista_tareas
+from .pages.about import about
 
 
 class State(rx.State):
@@ -17,6 +19,7 @@ def index() -> rx.Component:
     return rx.container(
         navbar(),
         hero(),
+        lista_tareas()
     )
 
 
@@ -26,4 +29,5 @@ app = rx.App(
     ),
     style={"background_color": "#F7F7F7"}
 )
-app.add_page(index)
+app.add_page(index, route="/")
+app.add_page(about, route="/about")
